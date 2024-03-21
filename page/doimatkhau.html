@@ -1,0 +1,59 @@
+<style>
+    .container main .user {
+        width: 50%;
+        background-color: aliceblue;
+        padding: 50px;
+        border-radius: 10px;
+    }
+</style>
+
+<div class="container">
+    <h1 class="h3 text-center text-primary fw-bold">Đổi mật khẩu</h1>
+    <main class="than img-fluid">
+        <article class="col-9 mx-auto mb-5 user m-auto card shadow">
+            <form class="center" name="frmdk">
+                <div class="mb-3">
+                    <label for="exampleInputUser1" class="form-label">Tài khoản</label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"> <i class="bi bi-envelope"></i> </span>
+                        <input ng-model="username" type="text" class="form-control" name="username" ng-disabled="true"
+                            style="background-color: aquamarine;">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputUser1" class="form-label">Mật khẩu cũ</label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"> <i class="bi bi-envelope"></i> </span>
+                        <input ng-model="pass_cu" type="password" class="form-control" name="password"
+                            placeholder="Nhập mật khẩu cũ ..." style="background-color: aquamarine;">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputUser1" class="form-label">Mật khẩu mới</label>
+                    <em class="text-danger float-end" ng-show="frmdk.pass_moi.$invalid">Mật khẩu nhập phải lớn hơn 6
+                        ký tự</em>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"> <i class="bi bi-envelope"></i> </span>
+                        <input required ng-minlength="6" ng-model="pass_moi" type="password" class="form-control"
+                            name="pass_moi" placeholder="Nhập mật khẩu mới..." style="background-color: aquamarine;">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputUser1" class="form-label">Xác nhận mật khẩu</label>
+                    <em class="text-danger float-end" ng-show="frmdk.confirmPass_moi.$invalid">Mật khẩu nhập phải lớn
+                        hơn 6
+                        ký tự</em>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"> <i class="bi bi-envelope"></i> </span>
+                        <input required ng-minlength="6" ng-model="confirmPass_moi" type="password" class="form-control"
+                            name="confirmPass_moi" placeholder="Xác nhận mật khẩu mới..."
+                            style="background-color: aquamarine;">
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="button" ng-click="doimatkhau()" class="btn btn-warning px-3">Đổi mật khẩu</button><br>
+                </div>
+            </form>
+        </article>
+    </main>
+</div>

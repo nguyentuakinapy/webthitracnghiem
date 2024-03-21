@@ -1,0 +1,6 @@
+<ul class="d-flex me-auto mb-2 mb-lg-0 nav container">
+    <li class="nav-item" ng-repeat="dsmh in listSubjects">
+        <a class="nav-link active text-secondary b" style="font-size: 14px;"
+            href="#!/tracnghiem/{{dsmh.Id}}/{{dsmh.Name}}" ng-click="setstart($index)"><b>{{dsmh.Name}}</b></a>
+    </li>
+</ul>

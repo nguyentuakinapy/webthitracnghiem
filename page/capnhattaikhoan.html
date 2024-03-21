@@ -1,0 +1,82 @@
+<div class="container mb-5">
+    <!-- <header class="bg-info position-relative text-center text-danger" style="height: 120px;">
+        <div id="chao" style="font-weight: bold;">
+            {{username}}
+            <div>Họ tên: <b>{{hoten}}</b>. <br>Email: <b>{{email}}</b>. <br>Sinh nhật: <b>{{birthday}}</b></div>
+        </div>
+    </header> -->
+    <h1 class="h3 text-center text-primary fw-bold">Cập nhật tài khoản</h1>
+    <div class="card shadow">
+        <form name="frmcntk" class="d-flex row">
+            <article class="col-6">
+                <div class="mb-3 m-3">
+                    <label class=" form-label">Họ và tên</label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="bi bi-person"></i></span>
+                        <input ng-model="fullname" type="text" ng-disabled="kiemtraSABLED" class="form-control"
+                            name="name" style="background-color: aquamarine;">
+                        <span ng-click="a()" class="input-group-text btn btn-primary"><i
+                                class="bi bi-pencil-square"></i></span>
+                    </div>
+                </div>
+                <div class="mb-3 m-3">
+                    <label class=" form-label">Email</label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="bi bi-envelope"></i> </span>
+                        <input ng-model="email" type="email" ng-disabled="kiemtraSABLED" class="form-control"
+                            name="gmail" style="background-color: aquamarine;">
+                        <span ng-click="a()" class="input-group-text btn btn-primary"><i
+                                class="bi bi-pencil-square"></i></span>
+                    </div>
+                </div>
+                <div class="mb-3 m-3">
+                    <label class=" form-label">Ngày tháng năm sinh</label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"> <i class="bi bi-envelope"></i> </span>
+                        <input ng-model="birthday" type="" ng-disabled="kiemtraSABLED" class="form-control" name="gmail"
+                            style="background-color: aquamarine;">
+                        <span ng-click="a()" class="input-group-text btn btn-primary"><i
+                                class="bi bi-pencil-square"></i></span>
+                    </div>
+                </div>
+            </article>
+            <aside class="col-6">
+                <div class="mb-3 m-3">
+                    <label class="form-label">Username</label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
+                        <input required ng-model="username" ng-disabled="kiemtraSABLED" type="text" class="form-control"
+                            name="text" style="background-color: aquamarine;">
+                        <span ng-click="" class="input-group-text btn btn-primary"><i
+                                class="bi bi-pencil-square"></i></span>
+                    </div>
+                </div>
+                <div class="mb-3 m-3">
+                    <label class="form-label">Password</label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="bi bi-key-fill"></i></span>
+                        <input required ng-model="password" ng-disabled="kiemtraSABLED" type="password"
+                            class="form-control" name="pass" style="background-color: aquamarine;">
+                        <span ng-click="matkhau()" class="input-group-text btn btn-primary"><i
+                                class="bi bi-pencil-square"></i></span>
+                    </div>
+                </div>
+                <div class="mb-3 m-3">
+                    <label class="form-label">Số dư</label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="bi bi-key-fill"></i></span>
+                        <input required ng-model="money" ng-disabled="kiemtraSABLED" type="text" class="form-control"
+                            name="gmail" style="background-color: aquamarine;">
+                        <span ng-click="a()" class="input-group-text btn btn-primary"><i
+                                class="bi bi-pencil-square"></i></span>
+                    </div>
+                </div>
+                <b ng-if="gender">Nam</b>
+                <b ng-if="!gender">Nữ</b>
+            </aside>
+            <div class="m-3 text-center">
+                <button class="text-center btn btn-primary" ng-click="capnhatTK()">Cập nhật tài khoản</button>
+            </div>
+        </form>
+    </div>
+</div>

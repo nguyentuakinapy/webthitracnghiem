@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg bg-primary-subtle">
+    <div class="container">
+        <a class="navbar-brand" style="width: 100px;" href="#!/"><img class="w-100" src="img/Poly1.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active a" aria-current="page" href="#!gioithieu"><i
+                            class="bi bi-globe-asia-australia me-2"></i>Giới thiệu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link a" href="#!tienganh"><i class="bi bi-translate me-2"></i></i>Tiếng Anh</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link a" href="#!tailieu"><i class="bi bi-lightbulb me-2"></i>Tài liệu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link a" href="#"><i class="bi bi-patch-question me-2"></i>Phú Yên</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2 an1" type="search" placeholder="Tìm kiếm" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+            </form>
+            <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle a" href="#" ng-if="fullname==null" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle me-2"></i>Tài khoản
+                    </a>
+                    <a class="nav-link dropdown-toggle a" href="#" ng-if="fullname!=full" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle me-2"></i>{{fullname}}
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li ng-if="fullname==null"><a class="dropdown-item" href="#!dangky">Đăng ký</a></li>
+                        <li ng-if="fullname==null"><a class="dropdown-item" href="#!dangnhap">Đăng nhập</a></li>
+                        <li ng-if="fullname==null"><a class="dropdown-item" href="#!quenmatkhau">Quên mật khẩu</a>
+                        </li>
+                        <!-- <li>
+                            <hr ng-if="fullName == null" class="dropdown-divider">
+                        </li> -->
+                        <li ng-if="fullname!=full"><a class="dropdown-item" ng-click="dangxuat()" href="#">Đăng
+                                xuất</a></li>
+                        <li ng-if="fullname!=full"><a class="dropdown-item" href="#!doimatkhau">Đổi mật khẩu</a></li>
+                        <li ng-if="fullname!=full"><a class="dropdown-item" href="#!capnhattaikhoan">Cập nhật tài
+                                khoản</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-primary position-relative">
+                        <i class="bi bi-bell"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            0+
+                            <span class="visually-hidden">ád</span>
+                        </span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

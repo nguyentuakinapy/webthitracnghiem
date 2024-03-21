@@ -1,0 +1,231 @@
+<style>
+    .chuyendoi {
+        display: none;
+    }
+
+    .active {
+        display: block;
+    }
+</style>
+<div class="mb-4">
+    <div class="container">
+        <p style="font-size: 13px;"><b>Trang chủ</b> > {{tenMH}} > Thi trắc nghiệm > <span class="text-primary fw-bold">
+                {{thongtin}}</span>
+        </p>
+        <h1 class="h3 text-center text-primary fw-bold">{{tenMH}}</h1>
+        <p class="text-center mx-5">Tổng hợp các nội dung ôn tập bám sát chương trình học đi kèm giải
+            thích chi tiết, được cập nhật thường
+            xuyên, liên tục giúp các em nâng cao kĩ năng làm bài và đạt kết quả tốt trong các bài kiểm tra, đánh giá của
+            mình.</p>
+        <div class="text-center m-4">
+            <button class="btn btn-primary px-5 py-2 fw-bold" ng-click="changeCard('Tài liệu ôn tập')"><i
+                    class="bi bi-journal-text me-2"></i>Tài liệu ôn tập</button>
+            <button class="btn btn-danger px-5 py-2 fw-bold" ng-click="changeCard('Đề kiểm tra')"><i
+                    class="bi bi-pencil me-2"></i>Đề kiểm tra</button>
+        </div>
+        <h1 class="h3 text-center text-success fw-bold">{{thongtin}}</h1>
+        <div class="hien text-center my-3">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Bảng xếp hạng
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Bảng xếp hạng</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="shadow card rounded-2" style="min-height: 350px;">
+                                <p class="text-primary text-center fw-bold h5 mt-4"><i class="bi bi-star-fill"></i> Bảng
+                                    xếp hạng <i class="bi bi-star-fill"></i></p>
+                                <p class="text-warning text-center fw-bold h4 mx-2">{{tenMH}}</p>
+                                <hr class="my-0">
+                                <table class="table table-striped table-bordered">
+                                    <tr class="thead-light">
+                                        <th class="text-center" style="background-color: rgb(254, 244, 252);">Hạng</th>
+                                        <th class="text-center" style="background-color: rgb(254, 244, 252);">Họ và tên
+                                        </th>
+                                        <th class="text-center" style="background-color: rgb(254, 244, 252);">Điểm</th>
+                                    </tr>
+                                    <tr ng-repeat="hc in StudentsBXH">
+                                        <th class="text-center">{{$index + 1}}</th>
+                                        <th class="text-center">{{hc.fullname}}</th>
+                                        <th class="text-center">{{getdiem(hc.marks, idMH)}}đ</th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary">Lưu</button>
+                            <button class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chuyendoi" ng-class="{ 'active': activeCard === 1 }" id="card1">
+            <div class="d-flex">
+                <article class="col-12 col-md-12 col-lg-8 shadow card my-2 me-2 border-primary border-2 rounded-4">
+                    <div class="" style="min-height: 470px;">
+                    </div>
+                </article>
+                <aside class="col col-md-3 col-lg-4 an m-2">
+                    <div class="border border-2 border-primary bg-white rounded-4 shadow">
+                        <p class="fw-bold text-primary text-center mt-4 h4">Huy hiệu học tập</p>
+                        <div class="text-center mb-2 row mx-4 mb-3">
+                            <div class="col">
+                                <img src="img/rank/Classic.png" alt="">
+                                <!-- <p class="fw-bold">None</p> -->
+                            </div>
+                            <div class="col">
+                                <img src="img/rank/Bạc.png" alt="">
+                                <!-- <p class="fw-bold">Silver</p> -->
+                            </div>
+                            <div class="col">
+                                <img src="img/rank/Vàng.png" alt="">
+                                <!-- <p class="fw-bold">Gold</p> -->
+                            </div>
+                            <div class="col">
+                                <img src="img/rank/LB.png" alt="">
+                                <!-- <p class="fw-bold">Emerald</p> -->
+                            </div>
+                            <div class="col">
+                                <img src="img/rank/Diamond.png" alt="">
+                                <!-- <p class="fw-bold">Diamond</p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border border-2 border-primary bg-white rounded-4 shadow mt-4"
+                        style="min-height: 350px;">
+                        <p class="text-primary text-center fw-bold h5 mt-4"><i class="bi bi-star-fill"></i> Bảng xếp
+                            hạng <i class="bi bi-star-fill"></i></p>
+                        <p class="text-warning text-center fw-bold h4 mx-2">{{tenMH}}</p>
+                        <hr class="my-0">
+                        <table class="table table-striped table-bordered">
+                            <tr class="thead-light">
+                                <th class="text-center" style="background-color: rgb(254, 244, 252);">Hạng</th>
+                                <th class="text-center" style="background-color: rgb(254, 244, 252);">Họ và tên</th>
+                                <th class="text-center" style="background-color: rgb(254, 244, 252);">Điểm</th>
+                            </tr>
+                            <tr ng-repeat="hc in StudentsBXH">
+                                <th class="text-center">{{$index + 1}}</th>
+                                <th class="text-center">{{hc.fullname}}</th>
+                                <th class="text-center">{{getdiem(hc.marks, idMH)}}đ</th>
+                            </tr>
+                        </table>
+                    </div>
+                </aside>
+            </div>
+            <div class="text-center mt-5">
+                <h1>KHÔNG CÓ GÌ ĐỂ HỌC ĐÂU EM QUA BÊN KIỂM TRA ĐI</h1>
+                <img class="mb-2" src="img/undefined - Imgur.gif" alt="">
+            </div>
+            <div class="container my-2">
+                <img src="img/FPT 2024.png" class="w-100" alt="">
+            </div>
+        </div>
+        <div class="chuyendoi" ng-class="{ 'active': activeCard === 2 }" id="card2"
+            ng-repeat="ch in cauhoi | limitTo: 1:start">
+            <div class="d-flex">
+                <article class="col-12 col-md-12 col-lg-8 shadow card my-2 me-2 border-primary border-2 rounded-4"
+                    style="min-height: 470px;">
+                    <div class="text-center" ng-if="fullname!=null">
+                        <button class="btn btn-warning mt-3" ng-click="batdau()" ng-if="!ahihi">Bắt đầu kiểm
+                            tra</button>
+                        <button class="btn btn-danger mt-3" ng-click="ketthuc()" ng-if="ahihi">Kểt thúc bài kiểm
+                            tra</button>
+                    </div>
+                    <div class="text-center" ng-if="fullname==null">
+                        <button class="btn btn-secondary mt-3" ng-click="chuyentrang()" ng-if="!ahihi">Đăng nhập để tiếp
+                            tục</button>
+                    </div>
+                    <div class="border mb-2 m-2" ng-if="ahihi">
+                        <div class="card-header d-flex">
+                            <div class="col-11">
+                                <i class="bi bi-grid-1x2-fill me-2"></i>{{tenMH}}
+                            </div>
+                            <div class="col-1">
+                                <span class="badge text-bg-primary float-end"><i
+                                        class="bi bi-alarm me-2"></i>{{dinhDangThoiGian}}</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p><span class="fw-bold">Câu hỏi số {{start+1}}:</span> {{ch.Text}}</p>
+                            <hr class="my-1">
+                            <div class="form-check" ng-repeat="ctl in ch.Answers">
+                                <input ng-click="kiemtraPA(ctl.Id, ch.AnswerId, ch.Marks)" class="form-check-input"
+                                    type="radio" name="cauhoi_{{ch.Id}}" value="{{ctl.Id}}" ng-model="answer">
+                                <label class="form-check-label">
+                                    {{ctl.Text}}
+                                </label>
+                            </div>
+                        </div>
+                        <div class="card-footer text-body-secondary">
+                            Điểm: {{ch.Marks}}
+                        </div>
+                    </div>
+                    <div class="text-center text-center mt-2 mb-2" ng-if="ahihi">
+                        <button class="btn bg-primary px-4 float-center" ng-click="quaylai()">
+                            <i class="bi bi-arrow-left-circle-fill"></i></button>
+                        <button class="btn bg-primary px-4 float-center" ng-click="tiep()"><i
+                                class="bi bi-arrow-right-circle-fill"></i></button>
+                    </div>
+                </article>
+                <aside class="col col-md-3 col-lg-4 an m-2">
+                    <div class="border border-2 border-primary bg-white rounded-4 shadow">
+                        <p class="fw-bold text-primary text-center mt-4 h4">Huy hiệu học tập</p>
+                        <div class="text-center mb-2 row mx-4 mb-3">
+                            <div class="col">
+                                <img src="img/rank/Classic.png" alt="">
+                                <!-- <p>None</p> -->
+                            </div>
+                            <div class="col">
+                                <img src="img/rank/Bạc.png" alt="">
+                                <!-- <p>Silver</p> -->
+                            </div>
+                            <div class="col">
+                                <img src="img/rank/Vàng.png" alt="">
+                                <!-- <p>Gold</p> -->
+                            </div>
+                            <div class="col">
+                                <img src="img/rank/LB.png" alt="">
+                                <!-- <p>Emerald</p> -->
+                            </div>
+                            <div class="col">
+                                <img src="img/rank/Diamond.png" alt="">
+                                <!-- <p>Diamond</p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border border-2 border-primary bg-white rounded-4 shadow mt-4"
+                        style="min-height: 350px;">
+                        <p class="text-primary text-center fw-bold h5 mt-4"><i class="bi bi-star-fill"></i> Bảng xếp
+                            hạng <i class="bi bi-star-fill"></i></p>
+                        <p class="text-warning text-center fw-bold h4 mx-2">{{tenMH}}</p>
+                        <hr class="my-0">
+                        <table class="table table-striped table-bordered">
+                            <tr class="thead-light">
+                                <th class="text-center" style="background-color: rgb(254, 244, 252);">Hạng</th>
+                                <th class="text-center" style="background-color: rgb(254, 244, 252);">Họ và tên</th>
+                                <th class="text-center" style="background-color: rgb(254, 244, 252);">Điểm</th>
+                            </tr>
+                            <tr ng-repeat="hc in StudentsBXH">
+                                <th class="text-center">{{$index + 1}}</th>
+                                <th class="text-center">{{hc.fullname}}</th>
+                                <th class="text-center">{{getdiem(hc.marks, idMH)}}đ</th>
+                            </tr>
+                        </table>
+                    </div>
+                </aside>
+            </div>
+            <div class="container m-2">
+                <img src="img/FPT 2024.png" class="w-100" alt="">
+            </div>
+        </div>
+    </div>
+</div>

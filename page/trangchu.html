@@ -1,0 +1,199 @@
+<div class="my-4">
+    <h1 class="h3 text-primary fw-bold text-center">Bộ bài tập và đề thi trắc nghiệm online các môn học</h1>
+    <p class="text-center">Bộ bài tập và đề thi được cá nhân hóa theo trình độ từng học sinh giúp các em tự tin
+        đứng top chỉ với 30
+        phút học mỗi ngày.</p>
+</div>
+<div class="container">
+    <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/fptbanner1.png" class="d-block w-100" alt="0">
+            </div>
+            <div class="carousel-item">
+                <img src="img/fptbanner2.png" class="d-block w-100" alt="1">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+<div class="container mt-5 w-75 mb-2">
+    <div class="col d-flex justify-content-center">
+        <p class="h3 fw-bold"><i class="bi bi-pc-display-horizontal me-2"></i>Khóa học Pro</p>
+        <div class="ms-2">
+            <span class="badge text-bg-primary">Mới</span>
+        </div>
+    </div>
+</div>
+<div class="container d-flex w-75 justify-content-center">
+    <div class="card me-2 shadow" style="width: 18rem;">
+        <img src="img/html.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">HTML CSS Pro</h5>
+            <p class="card-text text-danger"><strike class="text-dark">2.500.000đ</strike> 1.299.000đ</p>
+            <a href="#" class="btn btn-primary">Xem chi tiết</a>
+        </div>
+    </div>
+    <div class="card me-2 shadow" style="width: 18rem;">
+        <img src="img/html.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text text-danger"><strike class="text-dark">2.500.000đ</strike> 1.299.000đ</p>
+            <a href="#" class="btn btn-primary">Xem chi tiết</a>
+        </div>
+    </div>
+    <div class="card me-2 shadow" style="width: 18rem;">
+        <img src="img/html.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text text-danger"><strike class="text-dark">2.500.000đ</strike> 1.299.000đ</p>
+            <a href="#" class="btn btn-primary">Xem chi tiết</a>
+        </div>
+    </div>
+    <div class="card me-2 shadow" style="width: 18rem;">
+        <img src="img/html.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text text-danger"><strike class="text-dark">2.500.000đ</strike> 1.299.000đ</p>
+            <a href="#" class="btn btn-primary">Xem chi tiết</a>
+        </div>
+    </div>
+</div>
+<div class="container mt-5 w-75 mb-2">
+    <div class="col d-flex justify-content-center">
+        <p class="h3 fw-bold"><i class="bi bi-pc-display-horizontal me-2"></i>Khóa học miễn phí
+        </p>
+        <div class="ms-2">
+            <span class="badge text-bg-primary">Mới</span>
+        </div>
+    </div>
+</div>
+<div class="container d-flex w-75 justify-content-center">
+    <div class="card mx-1 shadow" style="width: 18rem;" ng-repeat="anh in listSubjects | limitTo:page:start">
+        <!-- <img src="img/logos/{{anh.Logo}}" class="card-img-top" alt=""> -->
+        <img ng-src="img/logos/{{anh.Logo}}" class="card-img-top" alt="">
+        <hr class="my-0">
+        <div class="card-body">
+            <h5 class="card-title">{{anh.Name|uppercase}}</h5>
+            <p class="card-text text-warning fw-bold">Miễn phí</p>
+            <a href="#!/tracnghiem/{{anh.Id}}/{{anh.Name}}" ng-click="setstart($index)" class="btn btn-primary">Xem chi
+                tiết</a>
+        </div>
+    </div>
+</div>
+<div class="container w-75 mt-2 d-flex justify-content-between">
+    <button class="btn btn-danger ms-5" ng-click="quaylai()"><i class="bi bi-arrow-left-circle-fill"></i></button>
+    <div class="text-center fw-bold mt-1">
+        <span>Trang: {{sotrang}} </span>
+    </div>
+    <button class="btn btn-danger float-end me-5" ng-click="tiep()"><i
+            class="bi bi-arrow-right-circle-fill"></i></button>
+</div>
+<div class="mt-5" style="background-color: rgb(254, 244, 252);">
+    <div class="container" style="height: 50px;"></div>
+    <div class="container">
+        <h1 class="h3 fw-bold text-primary text-center">3 bước chinh phục các bài tốt cùng Akina</h1>
+    </div>
+    <div class="container d-flex">
+        <div class="card mx-3 col border border-3 border-primary shadow">
+            <div class="card-header text-center fw-bold text-warning h4 bg-white ">
+                Bước 1
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Phát hiện điểm mạnh và điểm yếu</h5>
+                <p class="card-text">Các bài tập được cá nhân hóa theo từng học sinh, các em sẽ biết được trình
+                    độ ngay khi hoàn thành bài học đó với nội dung luyện tập được cập nhật mới nhất.</p>
+            </div>
+        </div>
+        <div class="text-center mx-3">
+            <i class="bi bi-chevron-double-right bg-primary btn" style="margin-top: 120px; margin-bottom: 120px;"></i>
+        </div>
+        <div class="card mx-3 col border border-3 border-primary shadow">
+            <div class="card-header text-center fw-bold text-warning h4 bg-white">
+                Bước 2
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Bổ sung kiến thức</h5>
+                <p class="card-text">Ngay khi biết được trình độ của mình, điểm mạnh, điểm yếu ở từng bài tập
+                    các em sẽ có kế hoạch bổ sung kiến thức của mình dễ dàng hơn.</p>
+            </div>
+        </div>
+        <div class="text-center mx-3">
+            <i class="bi bi-chevron-double-right bg-primary btn" style="margin-top: 120px; margin-bottom: 120px;"></i>
+        </div>
+        <div class="card mx-3 col border border-3 border-primary shadow">
+            <div class="card-header text-center fw-bold text-warning h4 bg-white">
+                Bước 3
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Lên kế hoạch học tập</h5>
+                <p class="card-text">Khi biết mình yếu môn nào, giỏi
+                    môn nào thì việc lên kế hoạch học
+                    tập để đạt mục tiêu điểm là điều
+                    không thể thiếu nếu muốn có được
+                    kết quả tốt nhất.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="height: 50px;"></div>
+</div>
+<div class="container my-2 d-flex">
+    <div class="col-7 mx-2">
+        <div class="d-flex justify-content-between">
+            <h1 class="text-primary h2 fw-bold">Tài liệu mới nhất</h1>
+            <a href="" class="fw-bold float-end text-decoration-none" style="color: #FFA500;">Xem thêm ></a>
+        </div>
+        <div class="d-flex">
+            <div class="col-6">
+                <div class="card m-4 shadow">
+                    <a href="" class="text-decoration-none m-2"><i class="bi bi-journals mx-2"></i>Tài liệu ôn tập
+                        Java</a>
+                </div>
+                <div class="card m-4 shadow">
+                    <a href="" class="text-decoration-none m-2"><i class="bi bi-journals mx-2"></i> Tài liệu ôn tập
+                        Java</a>
+                </div>
+                <div class="card m-4 shadow">
+                    <a href="" class="text-decoration-none m-2"><i class="bi bi-journals mx-2"></i> Tài liệu ôn tập
+                        Java</a>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card m-4 shadow">
+                    <a href="" class="text-decoration-none m-2"><i class="bi bi-journals mx-2"></i> Tài liệu ôn tập
+                        Java</a>
+                </div>
+                <div class="card m-4 shadow">
+                    <a href="" class="text-decoration-none m-2"><i class="bi bi-journals mx-2"></i> Tài liệu ôn tập
+                        Java</a>
+                </div>
+                <div class="card m-4 shadow">
+                    <a href="" class="text-decoration-none m-2"><i class="bi bi-journals mx-2"></i> Tài liệu ôn tập
+                        Java</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-5 mx-2"><img src="img/FPT 2024.png" class="w-100" alt=""></div>
+</div>
+<div class="my-3" style="background-color: #ffe7da; min-height: 300px;">
+
+</div>
+<!-- <div class="my-3 container" style="min-height: 300px;">
+    <img src="img/tailieuIT.png" alt="" class="">
+</div> -->

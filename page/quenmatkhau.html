@@ -1,0 +1,30 @@
+<style>
+    .container main .user {
+        width: 50%;
+        background-color: aliceblue;
+        padding: 50px;
+        border-radius: 10px;
+    }
+</style>
+
+<div class="container">
+    <h1 class="h3 text-center text-primary fw-bold">Quên mật khẩu</h1>
+    <main class="than img-fluid">
+        <article class="col-9 mx-auto mb-5 user m-auto card shadow">
+            <form class="center" name="frmdk">
+                <div class="mb-3">
+                    <label for="exampleInputUser1" class="form-label">Nhập Email đã đăng ký</label>
+                    <em class="text-danger float-end" ng-show="frmdk.gmail.$invalid">Vui lòng nhập Email</em>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"> <i class="bi bi-envelope"></i> </span>
+                        <input required ng-model="email" type="email" class="form-control" name="gmail"
+                            placeholder="Nhập email của bạn..." style="background-color: aquamarine;">
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="button" ng-click="quenmk()" class="btn btn-danger px-3">Lấy lại mật khẩu</button><br>
+                </div>
+            </form>
+        </article>
+    </main>
+</div>
